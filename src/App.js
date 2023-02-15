@@ -1,10 +1,13 @@
 
 import './App.css';
-import Home from './pages/home/Home';
+import AppBarDrawer from './components/AppBar/AppBarDrawer';
 
 function App() {
   return (
-      <Home />
+    <>
+       <AppBarDrawer />   
+    </>
+
   );
 }
 
