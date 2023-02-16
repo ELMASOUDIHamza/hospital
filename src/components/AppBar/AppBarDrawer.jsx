@@ -1,14 +1,13 @@
 import * as React from 'react';
 import { styled, useTheme } from '@mui/material/styles';
-import {Box,Drawer,CssBaseline,IconButton,Divider,ListItemText,ListItemIcon,
-    ListItemButton,ListItem,Typography,List } from '@mui/material/';
+import {Box,Drawer,CssBaseline,IconButton,Divider,Typography,List } from '@mui/material/';
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+
+import DrawerListItem from '../drawer_list_item/DrawerListItem';
 
 const drawerWidth = 240;
 
@@ -108,30 +107,17 @@ export default function AppBarDrawer() {
         </DrawerHeader>
         <Divider />
         <List>
-          {['Urgences', 'Home', 'Hospitals', 'Consultation','Doctors'].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
+          <DrawerListItem title="Urgences" link="/urgences" color="red" />
+          <DrawerListItem title="Home" link="/" color="orange" />
+          <DrawerListItem title="Doctors" link="/doctors" color="black" />
+          <DrawerListItem title="Consultations" link="/consultations" color="black" />
+          <DrawerListItem title="Hospitals" link="/hospitals" color="black" />
         </List>
+
         <Divider />
         <List>
-          {['Trash','About','Contact us', 'Spam'].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                  {}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
+            <DrawerListItem title="About" link="/about" color="black" />
+            <DrawerListItem title="Contact Us" link="/contactus" color="black" />
         </List>
       </Drawer>
       <Main open={open}>
