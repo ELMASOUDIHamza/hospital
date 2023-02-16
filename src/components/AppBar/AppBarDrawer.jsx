@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React , {useEffect} from 'react';
 import { styled, useTheme } from '@mui/material/styles';
-import {Box,Drawer,CssBaseline,IconButton,Divider,Typography,List } from '@mui/material/';
+import {Box,Drawer,CssBaseline,IconButton,Divider,Typography,List, ClickAwayListener } from '@mui/material/';
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -65,9 +65,13 @@ export default function AppBarDrawer() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+  useEffect(() => {
+      document.addEventListener("mousedown",handleDrawerClose)
+    },[] );
 
   return (
-    <Box sx={{ display: 'flex' }}>
+   <> 
+    <Box  sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar position="fixed" open={open}>
         <Toolbar>
@@ -120,10 +124,12 @@ export default function AppBarDrawer() {
             <DrawerListItem action={handleDrawerClose} title="Contact Us" link="/contactus" color="black" />
         </List>
       </Drawer>
-      <Main open={open}>
+      <Main  open={open}>
         <DrawerHeader />
-
+        
       </Main>
+      
     </Box>
+    </>
   );
 }
