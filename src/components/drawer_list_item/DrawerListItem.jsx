@@ -9,7 +9,7 @@ const DrawerListItem = (props) => {
     return (
         
         <ListItem disablePadding textColor ={props.color} >
-        <Link to={props.link} textColor="red" style={linkDecor} >   
+        <Link to={props.link} onClick={props.action} textColor="red" style={linkDecor} >   
           <ListItemButton>
             <ListItemIcon>
               <MailIcon />

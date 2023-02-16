@@ -8,6 +8,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 import DrawerListItem from '../drawer_list_item/DrawerListItem';
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
@@ -48,7 +49,6 @@ const AppBar = styled(MuiAppBar, {
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
-  padding: theme.spacing(0, 1),
   // necessary for content to be below app bar
   ...theme.mixins.toolbar,
   justifyContent: 'flex-end',
@@ -80,9 +80,11 @@ export default function AppBarDrawer() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Persistent drawer
-          </Typography>
+            <Link to="/" style={{color: "#FFFFFF", textDecoration: "none" }}>
+              <Typography variant="h6" noWrap component="div">
+                Avicenne Hospital
+              </Typography>
+            </Link>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -105,17 +107,17 @@ export default function AppBarDrawer() {
         </DrawerHeader>
         <Divider />
         <List>
-          <DrawerListItem title="Urgences" link="/urgences" color="red" />
-          <DrawerListItem title="Home" link="/" color="orange" />
-          <DrawerListItem title="Doctors" link="/doctors" color="black" />
-          <DrawerListItem title="Consultations" link="/consultations" color="black" />
-          <DrawerListItem title="Hospitals" link="/hospitals" color="black" />
+          <DrawerListItem action={handleDrawerClose} title="Urgences" link="/urgences" color="red" />
+          <DrawerListItem action={handleDrawerClose} title="Home" link="/" color="orange" />
+          <DrawerListItem action={handleDrawerClose} title="Doctors" link="/doctors" color="black" />
+          <DrawerListItem action={handleDrawerClose} title="Consultations" link="/consultations" color="black" />
+          <DrawerListItem action={handleDrawerClose} title="Hospitals" link="/hospitals" color="black" />
         </List>
 
         <Divider />
         <List>
-            <DrawerListItem title="About" link="/about" color="black" />
-            <DrawerListItem title="Contact Us" link="/contactus" color="black" />
+            <DrawerListItem action={handleDrawerClose} title="About" link="/about" color="black" />
+            <DrawerListItem action={handleDrawerClose} title="Contact Us" link="/contactus" color="black" />
         </List>
       </Drawer>
       <Main open={open}>
