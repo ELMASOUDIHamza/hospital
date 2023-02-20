@@ -1,16 +1,19 @@
-import { Container } from '@mui/material';
+import { Container, Typography,Box } from '@mui/material';
 import React from 'react';
 import './home.css' ;
 
 const Home = () => {
     return (
 
-        <div className='body' >
-            <Container>
-                <h1>Home Page</h1>
+        
+            <Container className='body'>
+                <Box className='content'  >
+                    <Typography variant='h2' >Home Page</Typography>
+                </Box>
+                    
             </Container>
             
-        </div>
+        
         
     );
 }

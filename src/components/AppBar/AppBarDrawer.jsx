@@ -1,6 +1,6 @@
 import React , {useEffect} from 'react';
 import { styled, useTheme } from '@mui/material/styles';
-import {Box,Drawer,CssBaseline,IconButton,Divider,Typography,List, ClickAwayListener } from '@mui/material/';
+import {Box,Drawer,CssBaseline,IconButton,Divider,Typography,List } from '@mui/material/';
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -50,7 +50,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   // necessary for content to be below app bar
-  ...theme.mixins.toolbar,
+  //...theme.mixins.toolbar,
   justifyContent: 'flex-end',
 }));
 
@@ -73,7 +73,7 @@ export default function AppBarDrawer() {
    <> 
     <Box  sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open}>
+      <AppBar position="absolute" open={open} color='transparent' >
         <Toolbar>
           <IconButton
             color="inherit"

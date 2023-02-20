@@ -1,6 +1,9 @@
 .body {
-    height: 500px;
+    height: 800px;
     background-image: url('../../CHI_pictures/CHU1.jpg');
     background-size: cover ;
-    opacity: 70%;
+   
+}
+.content {
+     padding-top: 80px;
 }
